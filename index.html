@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>realist.</title>
+    <title>testing rn</title>
     <style>
         .follow-ball {
             position: absolute;
@@ -59,8 +59,8 @@
         });
 
         function animate() {
-            ballX += (mouseX - ballX) * 0.15;
-            ballY += (mouseY - ballY) * 0.15;
+            ballX += (mouseX - ballX) * 0.8;
+            ballY += (mouseY - ballY) * 0.8;
             followBall.style.transform = `translate(${ballX}px, ${ballY}px)`;
             requestAnimationFrame(animate);
         }
