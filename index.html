@@ -15,7 +15,6 @@
             background-color: white;
             border-radius: 50%;
             pointer-events: none;
-            transition: transform 0.1s linear;
         }
     </style>
 </head>
@@ -52,10 +51,20 @@
 
     <script>
         const followBall = document.getElementById("followBall");
+        let mouseX = 0, mouseY = 0, ballX = 0, ballY = 0;
 
         document.addEventListener("mousemove", (e) => {
-            followBall.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+            mouseX = e.clientX - 10;
+            mouseY = e.clientY - 10;
         });
+
+        function animate() {
+            ballX += (mouseX - ballX) * 0.1;
+            ballY += (mouseY - ballY) * 0.1;
+            followBall.style.transform = `translate(${ballX}px, ${ballY}px)`;
+            requestAnimationFrame(animate);
+        }
+        animate();
 
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
