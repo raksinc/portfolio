@@ -26,10 +26,6 @@
     transform-origin: center center;
 }
 
-body {
-    overflow: hidden;
-}
-
 .goo {
     display: none;
 }
