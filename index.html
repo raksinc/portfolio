@@ -59,8 +59,8 @@
         });
 
         function animate() {
-            ballX += (mouseX - ballX) * 0.1;
-            ballY += (mouseY - ballY) * 0.1;
+            ballX += (mouseX - ballX) * 0.25;
+            ballY += (mouseY - ballY) * 0.25;
             followBall.style.transform = `translate(${ballX}px, ${ballY}px)`;
             requestAnimationFrame(animate);
         }
