@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>raks | Software Developer</title>
+    <style>
+        .follow-ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            transition: transform 0.1s linear;
+        }
+    </style>
 </head>
 <body>
     <button onclick="toggleTheme()" class="theme-toggle">
@@ -36,7 +47,16 @@
             <a href="#">CDN</a>
         </div>
     </div>
+
+    <div class="follow-ball" id="followBall"></div>
+
     <script>
+        const followBall = document.getElementById("followBall");
+
+        document.addEventListener("mousemove", (e) => {
+            followBall.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+        });
+
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
                 const message = document.createElement('div');
@@ -69,18 +89,18 @@
         setInterval(createSnowflake, 100);
 
         function toggleTheme() {
-    document.body.classList.toggle("light-mode");
-    const moonIcon = document.getElementById("moon-icon");
-    const sunIcon = document.getElementById("sun-icon");
-    
-    if (document.body.classList.contains("light-mode")) {
-        moonIcon.style.display = "none";
-        sunIcon.style.display = "inline";
-    } else {
-        sunIcon.style.display = "none";
-        moonIcon.style.display = "inline";
-    }
-}
+            document.body.classList.toggle("light-mode");
+            const moonIcon = document.getElementById("moon-icon");
+            const sunIcon = document.getElementById("sun-icon");
+
+            if (document.body.classList.contains("light-mode")) {
+                moonIcon.style.display = "none";
+                sunIcon.style.display = "inline";
+            } else {
+                sunIcon.style.display = "none";
+                moonIcon.style.display = "inline";
+            }
+        }
     </script>
 </body>
 </html>
