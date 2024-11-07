@@ -7,16 +7,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>raks | Software Developer</title>
-    <style>
-        .follow-ball {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-    </style>
 </head>
 <body>
     <button onclick="toggleTheme()" class="theme-toggle">
@@ -46,28 +36,7 @@
             <a href="#">CDN</a>
         </div>
     </div>
-
-    <div class="follow-ball" id="followBall"></div>
-
     <script>
-        const followBall = document.getElementById("followBall");
-        let mouseX = 0, mouseY = 0, ballX = 0, ballY = 0;
-
-        document.addEventListener("mousemove", (e) => {
-            mouseX = e.clientX - 10;
-            mouseY = e.clientY - 10;
-        });
-
-        function animate() {
-            ballX += (mouseX - ballX) * 0.3;
-            ballY += (mouseY - ballY) * 0.3;
-            followBall.style.transform = `translate(${ballX}px, ${ballY}px)`;
-            requestAnimationFrame(animate);
-        }
-
-        followBall.style.transform = `translate(${mouseX}px, ${mouseY}px)`;  // Start at cursor position
-        animate();
-
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
                 const message = document.createElement('div');
